@@ -14,11 +14,29 @@ module.exports = {
       fin_fecha: {
         type: Sequelize.DATE
       },
-      habitacion: {
-        type: Sequelize.INTEGER
+      habitacion_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model:{
+            tableName: 'habitaciones',
+          },
+          key: 'id'
+        },
+        allowNull: false,
+        onDelete:'CASCADE',
+        onUpdate:'CASCADE'
       },
-      huesped: {
-        type: Sequelize.INTEGER
+      huesped_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model:{
+            tableName: 'huespedes',
+          },
+          key: 'id'
+        },
+        allowNull: false,
+        onDelete:'CASCADE',
+        onUpdate:'CASCADE'
       },
       createdAt: {
         allowNull: false,

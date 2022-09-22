@@ -5,8 +5,8 @@ module.exports = {
     return queryInterface.bulkInsert('reservas', [{
       inicio_fecha: "2022-11-21", 
       fin_fecha: "2022-11-12",
-      habitacion: 2,
-      huesped: 3,
+      habitacion_id: 1,
+      huesped_id: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     }]);
