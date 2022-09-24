@@ -3,7 +3,7 @@ const huesped = require('../models').Huespedes;
 
 module.exports={
 
-    List(_,res){
+    ListarHuspedes(_,res){
               return huesped.findAll({})
               .then(huesped => res.status(200).send(huesped))
               .catch(error => res.status(400).send(error))

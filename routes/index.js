@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/api/huespedes/',HuespedesController.List);
+router.get('/api/huespedes/',HuespedesController.ListarHuspedes);
 router.get('/api/huespedes/nombres/:nombres',HuespedesController.ListAt);
 
 router.get('/api/habitaciones/',HabitacionesController.List);

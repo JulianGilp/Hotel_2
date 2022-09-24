@@ -3,7 +3,7 @@ const habitacion = require('../models').Habitaciones;
 
 module.exports={
 
-    List(_,res){
+List(_,res){
               return habitacion.findAll({})
               .then(habitacion => res.status(200).send(habitacion))
               .catch(error => res.status(400).send(error))

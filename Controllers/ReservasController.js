@@ -3,7 +3,7 @@ const reserva = require('../models').Reservas;
 
 module.exports={
 
-    List(_,res){
+List(_,res){
               return reserva.findAll({})
               .then(reserva => res.status(200).send(reserva))
               .catch(error => res.status(400).send(error))
