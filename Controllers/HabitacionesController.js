@@ -4,21 +4,21 @@ const habitacion = require('../models').Habitaciones;
 module.exports={
 
 List(_,res){
-              return habitacion.findAll({})
-              .then(habitacion => res.status(200).send(habitacion))
-              .catch(error => res.status(400).send(error))
+     return habitacion.findAll({})
+     .then(habitacion => res.status(200).send(habitacion))
+     .catch(error => res.status(400).send(error))
 },
 ListAt(req,res){
-              return habitacion.findAll({
-                            where: {
-                                 id: req.params.id
-                            }
-              })
-              .then(habitacion => res.status(200).send(habitacion))
-              .catch(error => res.status(400).send(error))
+     return habitacion.findAll({
+               where:    {
+                           id: req.params.id
+                         }
+     })
+     .then(habitacion => res.status(200).send(habitacion))
+     .catch(error => res.status(400).send(error))
 
 },
-CreateHabitacion(req, res){
+CreateHabitacion(req, res){ //creacion de una habitacion pasando los parametros por la ruta. 
      return habitacion.create({
           precio_por_noche: req.params.precio_por_noche,
           piso: req.params.piso,
@@ -30,5 +30,7 @@ CreateHabitacion(req, res){
      }).then(usuario => res.status(200).send(usuario))
      .catch(error => res.status(400).send(error))
 },
+
+
 
 }
