@@ -23,6 +23,10 @@ router.post('/api/CreateHabitacion/precio_por_noche/:precio_por_noche/piso/:piso
 router.get('/api/reservas/',ReservasController.List);
 router.get('/api/reservas/id/:id',ReservasController.ListAt);
 
+
+//Ruta con el join de Habitaciones y Reservas 
+router.get('/HabitacionReservas',HabitacionesController.ListarHabitacionReserva);
+
 module.exports = router;
 
 

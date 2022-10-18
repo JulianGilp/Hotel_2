@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+const reservas = require('../models').Reservas;
 const habitacion = require('../models').Habitaciones;
 
 module.exports={
@@ -30,6 +31,13 @@ CreateHabitacion(req, res){ //creacion de una habitacion pasando los parametros 
      }).then(usuario => res.status(200).send(usuario))
      .catch(error => res.status(400).send(error))
 },
+ListarHabitacionReserva(req,res){
+     return habitacion.findAll({
+          include: [{model: reservas, require:true}]
+        })
+        .then(habitacion => res.status(200).send(habitacion))
+        .catch(error => res.status(400).send(error))
+}
 
 
 

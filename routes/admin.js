@@ -44,7 +44,7 @@ router.get('/Habitaciones/huspedes', function (req,res)
 {
   return habitacion.findAll({
     include: [{model: reservas, require:true,
-    include: huespedes}]
+              include: huespedes}]
   })
   .then(habitacion => res.status(200).send(habitacion))
   .catch(error => res.status(400).send(error))

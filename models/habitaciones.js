@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-     Habitaciones.hasMany(models.Reservas,{foreignKey: 'habitacion_id'});      
+      //habitaciones tiene una relacion 1 a muchos con reservas y que la llave se encuentra en reservas
+      Habitaciones.hasMany(models.Reservas, {foreignKey:'habitacion_id'}); 
     }
   }
   Habitaciones.init({
