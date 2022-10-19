@@ -24,7 +24,7 @@ router.get('/api/reservas/',ReservasController.List);
 router.get('/api/reservas/id/:id',ReservasController.ListAt);
 
 
-//Ruta con el join de Habitaciones y Reservas 
+//Ruta que utiliza muestra el resultado del JOIN de Habitaciones con reservas. 
 router.get('/HabitacionReservas',HabitacionesController.ListarHabitacionReserva);
 
 module.exports = router;

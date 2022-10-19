@@ -40,6 +40,8 @@ router.get('/HabitacionBody', function (req,res)
 const reservas = require('../models').Reservas;
 const huespedes = require('../models').Huespedes;
 
+
+//Ruta que no utiliza controlador para realizar una consulta cruzando habitacion, reservas y huespedes. 
 router.get('/Habitaciones/huspedes', function (req,res)
 {
   return habitacion.findAll({
@@ -50,7 +52,7 @@ router.get('/Habitaciones/huspedes', function (req,res)
   .catch(error => res.status(400).send(error))
 });
 
-
+//Ruta que no utiliza controlador para realizar una consulta cruzando habitacion con reservas. 
 router.get('/Habitaciones/huspedes1', function (req,res)
 {
   return habitacion.findAll({
